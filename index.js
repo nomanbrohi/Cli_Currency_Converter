@@ -12,6 +12,7 @@ let currencies = {
 };
 console.log(chalk.bgBlue(chalk.cyanBright("Welcome to Currency Converter\n")));
 while (true) {
+    console.log("Please select the currency or select 'Exit' for exit");
     const selectFromCurrency = await currency1();
     if (selectFromCurrency === "Exit") {
         break;
@@ -23,6 +24,7 @@ while (true) {
     const currencyRate = currencies[selectToCurrency] / currencies[selectFromCurrency];
     console.log(`1 ${selectFromCurrency} equals ${currencyRate.toFixed(2)} ${selectToCurrency}`);
     while (true) {
+        console.log("Please enter the amount, or type 'exit' to exit");
         const enteredAmount = await amount();
         const result = enteredAmount * currencyRate;
         if (enteredAmount === "exit") {
